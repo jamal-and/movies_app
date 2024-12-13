@@ -15,25 +15,26 @@ class MovieListScreen extends StatelessWidget {
         title: const Text('All Movies'),
       ),
       body: GetBuilder(
-          init: MovieListViewmodel(),
-          builder: (MovieListViewmodel movieViewModel) {
-            return ListView.builder(
-              itemCount: movieViewModel.movies.length,
-              controller: movieViewModel.scrollController,
-              padding: EdgeInsets.symmetric(
-                horizontal: horizontalSpacing,
-                vertical: verticalSpacing / 2,
-              ),
-              itemBuilder: (context, index) {
-                Map item = movieViewModel.movies[index];
+        init: MovieListViewmodel(),
+        builder: (MovieListViewmodel movieViewModel) {
+          return ListView.builder(
+            itemCount: movieViewModel.movies.length,
+            controller: movieViewModel.scrollController,
+            padding: EdgeInsets.symmetric(
+              horizontal: horizontalSpacing,
+              vertical: verticalSpacing / 2,
+            ),
+            itemBuilder: (context, index) {
+              Map item = movieViewModel.movies[index];
 
-                return SizedBox(
-                  height: kDeviceHeight * 0.2,
-                  child: MovieBackdropWidget(item: item),
-                );
-              },
-            );
-          }),
+              return SizedBox(
+                height: kDeviceHeight * 0.2,
+                child: MovieBackdropWidget(item: item),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

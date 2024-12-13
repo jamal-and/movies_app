@@ -12,35 +12,14 @@ SnackbarController showMessage({
   int seconds = 3,
 }) {
   return Get.snackbar(
-    title, message,
-    backgroundColor: background ??
-        AppColors.background.withOpacity(0.8), // background?.withOpacity(0.7),
+    title,
+    message,
+    backgroundColor: background ?? AppColors.background.withOpacity(0.8),
     colorText: messageColor,
     icon: icon,
     duration: Duration(seconds: seconds),
     snackPosition: SnackPosition.BOTTOM,
-    //snackPosition: SnackPosition.BOTTOM,
   );
-  // return Flushbar(
-  //   flushbarPosition: FlushbarPosition.TOP,
-  //   borderRadius: generalRadius,
-  //   shouldIconPulse: false,
-  //   messageText: Text(
-  //     message,
-  //     style: textStyle14BlackSemiBold.copyWith(
-  //       color: messageColor,
-  //     ),
-  //   ),
-  //   backgroundColor: background ?? AppColors.background,
-  //   icon: icon ?? const Icon(CupertinoIcons.info),
-  //   margin: EdgeInsets.symmetric(
-  //     vertical: verticalSpacing,
-  //     horizontal: horizontalSpacing,
-  //   ),
-  //   duration: Duration(seconds: seconds),
-  // )..show(
-  //     Get.context!,
-  //   );
 }
 
 void showSuccessMessage({

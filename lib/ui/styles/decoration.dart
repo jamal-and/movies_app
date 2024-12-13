@@ -22,6 +22,7 @@ BoxDecoration cardDecoration({
             horizontalSpacing,
           ),
     );
+
 BoxDecoration circleDecoration({Color? color}) => BoxDecoration(
       color: color ?? AppColors.shapeBackground,
       shape: BoxShape.circle,

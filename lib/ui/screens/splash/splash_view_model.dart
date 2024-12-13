@@ -23,6 +23,7 @@ class SplashViewModel extends GetxController {
     Future.delayed(0.seconds).then(
       (value) {
         if (movies.isEmpty) {
+          // If movies is empty then data not loaded, we wait 1 second and check again
           Timer.periodic(
             1.seconds,
             (timer) {

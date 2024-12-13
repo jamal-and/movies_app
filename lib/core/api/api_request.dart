@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:movies/core/api/api_constants.dart';
 import 'package:movies/core/api/api_log.dart';
+import 'package:movies/core/helpers/messages.dart';
 
 class ApiRequest {
   ApiRequest({
@@ -142,12 +143,7 @@ class ApiRequest {
 
         //handle DioError here by error type or by error code
         if (shouldShowMessage) {
-          // showMessage(
-          //   description:
-          //       errorData['errors'] != null && errorData['errors'].length > 0
-          //           ? errorData['errors'][0]['message']
-          //           : errorData['message'],
-          // );
+          showErrorMessage(message: 'Error!!');
         }
 
         if (onError != null) {
@@ -155,9 +151,6 @@ class ApiRequest {
         }
 
         if (error.response!.statusCode == 401) {
-          // Get.find<MyAppController>().onSignOut();
-          // Get.offAllNamed(routeLogin);
-
           //SingOut
           //GoToLogin
         }
